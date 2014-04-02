@@ -12,7 +12,24 @@
   </head>
 
   <body>
-
+    <div class='fixed'>
+      <nav class='top-bar' data-topbar>
+        <ul class='title-area'>
+          <li class='name'><h1><%= link_to 'fave☆tweets' %></h1></li>
+        </ul>
+        <section class='top-bar-section'>
+          <ul class="hmenu right">
+            <!-- right menu items -->
+          </ul>
+          <ul class='left'>
+            <li><%= link_to 'freshest' %></li>
+            <li><%= link_to 'ripest' %></li>
+            <li><%= link_to 'most favorited' %></li>
+            <li><%= link_to 'most retweeted' %></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
