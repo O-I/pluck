@@ -33,4 +33,25 @@ namespace :favorites_list do
       end
     end
   end
+
+  desc "Get the most recent favorited tweets not in DB"
+  task pluck_recent: :environment do
+    greatest = Favorite.all.map { |t| t.tweet_id.to_i }.max
+    faves = $client.favorites(since_id: greatest)
+    faves.each do |fave|
+      Favorite.create( tweet_id: fave.id,
+                       date_tweeted: fave.created_at,
+                       text: fave.text,
+                       tweeter_id: fave.user[:id],
+                       tweeter_name: fave.user[:name],
+                       tweeter_screen_name: fave.user[:screen_name],
+                       retweet_count: fave.retweet_count,
+                       favorite_count: fave.favorite_count,
+                       urls: fave.attrs[:entities][:urls].map do |url|
+                               url[:display_url]
+                             end)
+    end
+    s = faves.size == 1 ? '' : 's'
+    puts "#{faves.size} new favorite#{s} added"
+  end
 end
