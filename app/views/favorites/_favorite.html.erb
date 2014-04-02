@@ -1,15 +1,18 @@
 <div class='small-7 large-centered columns favorite' id='favorite-<%= favorite.id %>'>
-  <div>
-    <%= favorite.tweeter_name %>
-    @<%= favorite.tweeter_screen_name %>
-    <%= favorite.date_tweeted %>
-  </div><br />
-  <div>
-    <%= favorite.text %>
-  </div><br />
-  <div>
-    ☆ <%=favorite.favorite_count %>
-    <span>&nbsp;&nbsp;&nbsp;</span>
-    ♲ <%=favorite.retweet_count %>
+  <%= image_tag favorite.tweeter_profile_image_url.to_s, class: 'fave-profile-pic' %>
+  <div class='fave-content'>
+    <div class='fave-header'>
+      <%= favorite.tweeter_name %>
+      @<%= favorite.tweeter_screen_name %>
+      <%= time_ago_in_words favorite.date_tweeted %> ago
+    </div><br />
+    <div class='fave-text'>
+      <%= favorite.text %>
+    </div><br />
+    <div class='fave-stats'>
+      ☆ <%=favorite.favorite_count %>
+      <span>&nbsp;&nbsp;&nbsp;</span>
+      ♲ <%=favorite.retweet_count %>
+    </div>
   </div>
 </div><br />
