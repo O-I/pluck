@@ -33,6 +33,9 @@ gem 'twitter'
 # For pagination
 gem 'will_paginate'
 
+# For prettying things up
+gem 'foundation-rails'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-debugger'
