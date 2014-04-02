@@ -1,2 +1,9 @@
-<h1>Favorites#index</h1>
-<p>Find me in app/views/favorites/index.html.erb</p>
+<h1>List of Twitter Favorites</h1>
+
+<%= will_paginate @favorites %>
+
+<div id='all-favorites'>
+  <%= render @favorites %>
+</div>
+
+<%= will_paginate @favorites %>
