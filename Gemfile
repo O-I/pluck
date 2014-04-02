@@ -30,6 +30,9 @@ gem 'dotenv-rails'
 # For working with the Twitter API
 gem 'twitter'
 
+# For pagination
+gem 'will_paginate'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-debugger'
