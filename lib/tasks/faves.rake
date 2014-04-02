@@ -12,7 +12,7 @@ namespace :favorites_list do
       options[:max_id] = faves.map(&:id).min unless faves.map(&:id).min.nil?
       faves += $client.favorites(options)
       puts "Iteration #{iter + 1} of #{iterations} complete"
-      sleep 3.minutes unless iter == iterations - 1
+      sleep 1.minute unless iter == iterations - 1
     end
 
     faves.each.with_index do |fave, index|
