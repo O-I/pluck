@@ -10,7 +10,6 @@
  *
  *= require_self
  *= require foundation_and_overrides
-
  *= require_tree .
  */
 
@@ -30,4 +29,19 @@ body {
   border: 1px solid #fff;
   border-radius: 10px;
   padding: 8px 0 8px 0;
+}
+
+.favorite:after {
+  content: '';
+  clear: both;
+  visibility: hidden;
+}
+
+.fave-profile-pic {
+  float: left;
+  margin-right: 5px;
+}
+
+.fave-content {
+  overflow: hidden;
 }
