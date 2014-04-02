@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140401235657) do
     t.string   "tweeter_id"
     t.string   "tweeter_name"
     t.string   "tweeter_screen_name"
+    t.text     "tweeter_profile_image_url"
     t.integer  "retweet_count"
     t.integer  "favorite_count"
     t.text     "urls"
