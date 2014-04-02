@@ -2,7 +2,7 @@ class CreateFavorites < ActiveRecord::Migration
   def change
     create_table :favorites do |t|
       t.string :tweet_id
-      t.date :date_tweeted
+      t.datetime :date_tweeted
       t.text :text
       t.string :tweeter_id
       t.string :tweeter_name

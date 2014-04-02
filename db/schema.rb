@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20140401235657) do
 
   create_table "favorites", force: true do |t|
     t.string   "tweet_id"
-    t.date     "date_tweeted"
+    t.datetime "date_tweeted"
     t.text     "text"
     t.string   "tweeter_id"
     t.string   "tweeter_name"
