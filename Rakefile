@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-FaveTweets::Application.load_tasks
+Pluck::Application.load_tasks

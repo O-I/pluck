@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-FaveTweets::Application.config.secret_key_base = '8bccf8756203124bbc0ac312012238a2f47a9cf4a36a2c3ca12aac5b053c97b190f751e81b95f299a177a5e197461ca970810d92115c78a614077756d119cc7d'
+Pluck::Application.config.secret_key_base = '8bccf8756203124bbc0ac312012238a2f47a9cf4a36a2c3ca12aac5b053c97b190f751e81b95f299a177a5e197461ca970810d92115c78a614077756d119cc7d'

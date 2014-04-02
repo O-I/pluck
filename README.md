@@ -1,3 +1,3 @@
-# Fave Tweets
+# ☆pluck
 
-Pulling your favorited tweets from Twitter
+☆pluck is a Rails app for sifting through my favorites list on Twitter.
