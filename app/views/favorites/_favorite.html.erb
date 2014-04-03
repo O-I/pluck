@@ -2,8 +2,8 @@
   <%= image_tag favorite.tweeter_profile_image_url.to_s, class: 'fave-profile-pic' %>
   <div class='fave-content'>
     <div class='fave-header'>
-      <%= favorite.tweeter_name %>
-      @<%= favorite.tweeter_screen_name %>
+      <%= favorite.tweeter_name %>&nbsp;&nbsp;
+      @<%= favorite.tweeter_screen_name %>&nbsp;&nbsp;
       <%= time_ago_in_words favorite.date_tweeted %> ago
     </div><br />
     <div class='fave-text'>
