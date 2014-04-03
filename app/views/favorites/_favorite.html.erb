@@ -7,7 +7,7 @@
       <%= time_ago_in_words favorite.date_tweeted %> ago
     </div><br />
     <div class='fave-text'>
-      <%= favorite.text %>
+      <%= favorite.text.html_safe %>
     </div><br />
     <div class='fave-stats'>
       ☆ <%=favorite.favorite_count %>
