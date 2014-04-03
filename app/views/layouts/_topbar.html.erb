@@ -7,20 +7,20 @@
       <ul class="right">
         <li class="has-form">
           <div class="row collapse">
-            <div class="large-4 small-3 columns">
+            <div class="large-3 small-3 columns">
               <a href="#" class="alert button expand">pluck</a>
             </div>
-            <div class="large-8 small-9 columns">
-              <input type="text" placeholder="Find Stuff">
+            <div class="large-9 small-9 columns">
+              <input type="text" placeholder="just type">
             </div>
           </div>
         </li>
       </ul>
       <ul class='left'>
-        <li><%= link_to 'freshest' %></li>
-        <li><%= link_to 'ripest' %></li>
-        <li><%= link_to 'most favorited' %></li>
-        <li><%= link_to 'most retweeted' %></li>
+        <li><%= link_to 'freshest', sort: 'date_tweeted' %></li>
+        <li><%= link_to 'ripest', sort: 'date_tweeted' %></li>
+        <li><%= link_to 'most favorited', sort: 'favorite_count' %></li>
+        <li><%= link_to 'most retweeted', sort: 'retweet_count' %></li>
       </ul>
     </section>
   </nav>

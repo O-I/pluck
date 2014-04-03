@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = Favorite.page(params[:page]).order('date_tweeted DESC')
+    @favorites = Favorite.page(params[:page]).order(params[:sort] + ' DESC')
   end
 
   def show
