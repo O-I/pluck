@@ -17,10 +17,10 @@
         </li>
       </ul>
       <ul class='left'>
-        <li><%= link_to 'freshest', sort: 'date_tweeted' %></li>
-        <li><%= link_to 'ripest', sort: 'date_tweeted' %></li>
-        <li><%= link_to 'most favorited', sort: 'favorite_count' %></li>
-        <li><%= link_to 'most retweeted', sort: 'retweet_count' %></li>
+        <li><%= sortable 'freshest', 'date_tweeted', 'DESC' %></li>
+        <li><%= sortable 'ripest', 'date_tweeted', 'ASC' %></li>
+        <li><%= sortable 'most favorited', 'favorite_count', 'DESC' %></li>
+        <li><%= sortable 'most retweeted', 'retweet_count', 'DESC' %></li>
       </ul>
     </section>
   </nav>
