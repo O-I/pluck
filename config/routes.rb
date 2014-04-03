@@ -1,6 +1,6 @@
 Pluck::Application.routes.draw do
   root 'favorites#index'
-  get 'favorites/index'
+  get 'freshest', to: 'favorites#index', as: :freshest
   get 'favorites/show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
