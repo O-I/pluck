@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery ->
+endlessScroll = ->
   if ('.pagination').length
     $(window).scroll ->
       url = $('.pagination .next_page').attr('href')
@@ -10,3 +10,6 @@ jQuery ->
         $('.pagination').text('Plucking more favorites...')
         $.getScript(url)
     $(window).scroll()
+
+jQuery ->
+  endlessScroll()
