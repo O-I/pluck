@@ -58,3 +58,8 @@ ul.hmenu li {
 .fave-content {
   overflow: hidden;
 }
+
+#tweeter_link {
+  color: #222;
+  font-weight: normal;
+}
