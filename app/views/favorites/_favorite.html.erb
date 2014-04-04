@@ -4,7 +4,7 @@
     <div class='fave-header'>
       <%= link_to_tweeter favorite %>&nbsp;&nbsp;
       @<%= favorite.tweeter_screen_name %>&nbsp;&nbsp;
-      <%= time_ago_in_words favorite.date_tweeted %> ago
+      <%= link_to_tweet_id favorite %>
     </div><br />
     <div class='fave-text'>
       <%= favorite.text.html_safe %>

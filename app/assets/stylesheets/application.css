@@ -63,3 +63,16 @@ ul.hmenu li {
   color: #222;
   font-weight: normal;
 }
+
+#tweeter_link:hover {
+  text-decoration: underline;
+}
+
+#tweet_link {
+  color: #222;
+  font-style: italic;
+}
+
+#tweet_link:hover {
+  text-decoration: underline;
+}
