@@ -7,7 +7,7 @@
       <%= link_to_tweet_id favorite %>
     </div><br />
     <div class='fave-text'>
-      <%= favorite.text.html_safe %>
+      <%= text_to_true_link favorite.text %>
     </div><br />
     <div class='fave-stats'>
       ☆ <%=favorite.favorite_count %>

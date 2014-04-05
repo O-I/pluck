@@ -8,4 +8,12 @@ module FavoritesHelper
             "https://twitter.com/#{favorite.tweeter_screen_name}/status/#{favorite.tweet_id}",
             id: 'tweet_link')
   end
+
+  def text_to_true_link(tweet_text)
+    urls = tweet_text.scan(/http\S*/)
+    urls.each do |url|
+      tweet_text.gsub!(url, "<a href=#{url}>#{url}</a>")
+    end
+    tweet_text.html_safe
+  end
 end

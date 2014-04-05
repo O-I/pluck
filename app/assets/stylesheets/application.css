@@ -76,3 +76,12 @@ ul.hmenu li {
 #tweet_link:hover {
   text-decoration: underline;
 }
+
+.fave-text > a {
+  color: #222;
+}
+
+.fave-text > a:hover {
+  color: #222;
+  text-decoration: underline;
+}
