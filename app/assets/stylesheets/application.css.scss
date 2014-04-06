@@ -18,7 +18,7 @@ html {
 }
 
 body {   
-  background: #c7e0ed url(bg.png) no-repeat fixed top !important;
+  background: #c7e0ed image-url('bg.png') no-repeat fixed top !important;
   -webkit-font-smoothing: antialiased;
 }
 
