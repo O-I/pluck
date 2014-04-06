@@ -10,7 +10,7 @@ class FavoritesController < ApplicationController
   private
 
   def sort
-    "#{sort_column} #{sort_direction}"
+    shuffle? ? 'RANDOM()' : "#{sort_column} #{sort_direction}"
   end
 
   def sort_column
@@ -20,5 +20,9 @@ class FavoritesController < ApplicationController
 
   def sort_direction
     %w(ASC DESC).include?(params[:dir]) ? params[:dir] : 'DESC'
+  end
+
+  def shuffle?
+    params[:mix] == 'true'
   end
 end
