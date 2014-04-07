@@ -37,6 +37,9 @@ gem 'will_paginate'
 # For prettying things up
 gem 'foundation-rails'
 
+# For app monitoring
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-debugger'
