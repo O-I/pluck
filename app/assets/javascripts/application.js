@@ -14,4 +14,17 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+
 $(function(){ $(document).foundation(); });
+
+$(function() {
+  var sortOptions = 'ul.left > li > a';
+  $(sortOptions).on('click', function() {
+    $(sortOptions).css({ background: '#333333' });
+    $(this).css({ background: '#f04124' });
+    $('#all-favorites').empty();
+    // remove page params ???
+    $.getScript(this.href);
+    return false;
+  });
+});
