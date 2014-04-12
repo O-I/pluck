@@ -23,7 +23,7 @@ $(function() {
     $(sortOptions).css({ background: '#333333' });
     $(this).css({ background: '#f04124' });
     $('#all-favorites').empty();
-    // remove page params ???
+    $('.pagination').text('Rearranging...');
     $.getScript(this.href);
     return false;
   });
