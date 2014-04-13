@@ -7,8 +7,8 @@ gem 'rails', '4.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-# Use thin as the web server
-gem 'thin'
+# Use unicorn as the web server
+gem 'unicorn'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -41,6 +41,7 @@ gem 'foundation-rails'
 gem 'newrelic_rpm'
 
 group :development, :test do
+  gem 'thin'
   gem 'pry-rails'
   gem 'pry-debugger'
   gem 'rspec-rails', '~> 3.0.0.beta'
