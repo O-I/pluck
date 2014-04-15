@@ -28,3 +28,27 @@ $(function() {
     return false;
   });
 });
+
+$(document).ready(function() {
+  $(window).scroll(function() {
+    if($(this).scrollTop() > 1000) {
+      $('#to-top').stop().animate({
+        top: '130px'
+        }, 500);
+    }
+    else{
+      $('#to-top').stop().animate({
+        top: '-100px'
+        }, 500);
+    }
+  });
+  $('#to-top').click(function() {
+    $('html, body').stop().animate({
+      scrollTop: 0
+    }, 500, function() {
+      $('#to-top').stop().animate({
+        top: '-100px'
+      }, 500);
+    });
+  });
+});
