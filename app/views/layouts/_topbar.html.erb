@@ -4,16 +4,18 @@
       <li class='name'><h1><%= link_to '☆pluck' %></h1></li>
     </ul>
     <section class='top-bar-section'>
-      <ul class="right">
-        <li class="has-form">
-          <div class="row collapse">
-            <div class="large-3 small-3 columns">
-              <a href="#" class="alert button expand">pluck</a>
+      <ul class='right'>
+        <li class='has-form'>
+          <%= form_tag '/favorites', method: :get do %>
+            <div class='row collapse'>
+              <div class='large-3 small-3 columns'>
+                <%= submit_tag 'pluck', name: nil, class: 'alert button expand' %>
+              </div>
+              <div class='large-9 small-9 columns'>
+                <%= text_field_tag :query, params[:query], placeholder: 'just type' %>
+              </div>
             </div>
-            <div class="large-9 small-9 columns">
-              <input type="text" placeholder="just type">
-            </div>
-          </div>
+          <% end %>
         </li>
       </ul>
       <ul class='left'>
