@@ -11,7 +11,7 @@ class Favorite < ActiveRecord::Base
       where('tweeter_name ilike :q or tweeter_screen_name ilike :q or text ilike :q',
             q: "%#{query}")
     else
-      tap{}
+      all
     end
   end
 end
