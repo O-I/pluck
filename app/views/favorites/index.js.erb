@@ -2,5 +2,5 @@ $('#all-favorites').append('<%= j render(@favorites) %>');
 <% if @favorites.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(@favorites) %>');
 <% else %>
-  $('.pagination').remove();
+  $('.pagination').hide();
 <% end %>
