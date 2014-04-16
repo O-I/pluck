@@ -5,4 +5,13 @@ class Favorite < ActiveRecord::Base
   validates_uniqueness_of :tweet_id
 
   self.per_page = 25
+
+  def self.search(query)
+    if query.present?
+      where('tweeter_name ilike :q or tweeter_screen_name ilike :q or text ilike :q',
+            q: "%#{query}")
+    else
+      tap{}
+    end
+  end
 end

@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = Favorite.order(sort).page(params[:page])
+    @favorites = Favorite.search(params[:query]).order(sort).page(params[:page])
   end
 
   def show
