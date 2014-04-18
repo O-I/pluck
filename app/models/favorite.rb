@@ -8,14 +8,10 @@ class Favorite < ActiveRecord::Base
 
   include PgSearch
   pg_search_scope :find, 
-    against: [:tweeter_name, :tweeter_screen_name, :text],
+    against: { text: 'A', tweeter_name: 'B', tweeter_screen_name: 'C' },
     using: { tsearch: { dictionary: 'english' } }
 
   def self.search(query)
-    if query.present?
-      find(query)
-    else
-      all
-    end
+    query.present? ? find(query) : all
   end
 end
