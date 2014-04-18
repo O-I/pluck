@@ -1,4 +1,6 @@
-$('#all-favorites').append('<%= j render(@favorites) %>');
+<% result = @favorites.empty? ? 'noresult': @favorites %>
+$('#all-favorites').append('<%= j render result %>');
+
 <% if @favorites.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(@favorites) %>');
 <% else %>
