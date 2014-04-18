@@ -6,10 +6,14 @@ class Favorite < ActiveRecord::Base
 
   self.per_page = 25
 
+  include PgSearch
+  pg_search_scope :find, 
+    against: [:tweeter_name, :tweeter_screen_name, :text],
+    using: { tsearch: { dictionary: 'english' } }
+
   def self.search(query)
     if query.present?
-      where('tweeter_name @@ :q or tweeter_screen_name @@ :q or text @@ :q',
-            q: query)
+      find(query)
     else
       all
     end
