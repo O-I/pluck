@@ -18,6 +18,7 @@
 $(function(){ $(document).foundation(); });
 
 $(function() {
+  // Sortable links
   var sortOptions = 'ul.left > li > a';
   $(sortOptions).on('click', function() {
     $(sortOptions).css({ background: '#333333' });
@@ -27,8 +28,16 @@ $(function() {
     $.getScript(this.href);
     return false;
   });
+  // Search form
+  $('#faves_search').submit(function() {
+    $('#all-favorites').empty();
+    $('.pagination').text('Plucking...');
+    $.get(this.action, $(this).serialize(), null, 'script');
+    return false;
+  });
 });
 
+// Scroll to top arrow
 $(document).ready(function() {
   $(window).scroll(function() {
     if($(this).scrollTop() > 1000) {
