@@ -31,6 +31,9 @@ gem 'dotenv-rails'
 # For working with the Twitter API
 gem 'twitter'
 
+# For better working with PostgreSQL full text search
+gem 'pg_search'
+
 # For pagination
 gem 'will_paginate'
 
