@@ -9,7 +9,7 @@ class Favorite < ActiveRecord::Base
   def self.search(query)
     if query.present?
       where('tweeter_name ilike :q or tweeter_screen_name ilike :q or text ilike :q',
-            q: "%#{query}")
+            q: "%#{query}%")
     else
       all
     end
