@@ -25,7 +25,7 @@ $(function() {
     $(this).css({ background: '#f04124' });
     $('#all-favorites').empty();
     $('#query').val('');
-    $('.pagination').text('Rearranging...');
+    $('.pagination').show().text('Rearranging...');
     $.getScript(this.href);
     return false;
   });
@@ -33,7 +33,7 @@ $(function() {
   $('#faves_search').submit(function() {
     $('#all-favorites').empty();
     $(sortOptions).css({ background: '#333333' });
-    $('.pagination').text('Plucking...');
+    $('.pagination').show().text('Plucking...');
     $.get(this.action, $(this).serialize(), null, 'script');
     return false;
   });
