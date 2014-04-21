@@ -9,7 +9,7 @@ namespace :favorites_list do
     iterations = favorites_count / MAX + 1
     options = { count: MAX }
     iterations.times do |iter|
-      options[:max_id] = faves.map(&:id).min unless faves.map(&:id).min.nil?
+      options[:max_id] = faves.map(&:id).min - 1 unless faves.map(&:id).min.nil?
       faves += $client.favorites(options)
       puts "Iteration #{iter + 1} of #{iterations} complete"
       sleep 1.minute unless iter == iterations - 1
