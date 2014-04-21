@@ -36,4 +36,19 @@ namespace :favorites_list do
     s = faves.size == 1 ? '' : 's'
     puts "#{faves.size} new favorite#{s} added"
   end
+
+  desc "Remove duplicate favorites"
+  task remove_dupluckates: :environment do
+    freq = Hash.new(0)
+    faves = Favorite.pluck(:tweet_id)
+    faves.each { |fave| freq[fave] += 1 }
+    duplicate_tweet_ids = freq.select { |_, val| val > 1 }.keys
+    duplicates = Favorite.where(tweet_id: duplicate_tweet_ids)
+    ids_to_destroy = duplicates.map(&:id).select(&:even?)
+    quantity_removed = ids_to_destroy.size
+    s = quantity_removed == 1 ? '' : 's'
+    puts 'Removing duplicates...'
+    Favorite.destroy(ids_to_destroy)
+    puts "Removed #{quantity_removed} duplicate#{s}"
+  end
 end
