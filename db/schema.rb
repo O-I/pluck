@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414200804) do
+ActiveRecord::Schema.define(version: 20140421185625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140414200804) do
   add_index "favorites", ["date_tweeted"], name: "index_favorites_on_date_tweeted", using: :btree
   add_index "favorites", ["favorite_count"], name: "index_favorites_on_favorite_count", using: :btree
   add_index "favorites", ["retweet_count"], name: "index_favorites_on_retweet_count", using: :btree
+  add_index "favorites", ["tweet_id"], name: "index_favorites_on_tweet_id", unique: true, using: :btree
   add_index "favorites", ["tweeter_name"], name: "index_favorites_on_tweeter_name", using: :btree
   add_index "favorites", ["tweeter_screen_name"], name: "index_favorites_on_tweeter_screen_name", using: :btree
 
