@@ -48,6 +48,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-debugger'
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'factory_girl_rails'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
