@@ -3,10 +3,6 @@ class FavoritesController < ApplicationController
     @favorites = Favorite.search(params[:query]).order(sort).page(params[:page])
   end
 
-  def show
-    @favorite = Favorite.find(params[:id])
-  end
-
   private
 
   def sort
