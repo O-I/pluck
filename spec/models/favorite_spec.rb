@@ -16,4 +16,8 @@ describe Favorite do
   it { should respond_to(:retweet_count) }
   it { should respond_to(:favorite_count) }
   it { should respond_to(:urls) }
+
+  it { should be_valid }
+
+  it { should validate_uniqueness_of(:tweet_id) }
 end
