@@ -68,21 +68,23 @@ ul.hmenu li {
   overflow: hidden;
 }
 
-#tweeter_link {
+.tweeter_link {
   color: #222;
   font-weight: normal;
 }
 
-#tweeter_link:hover {
+.tweeter_link:hover {
+  color: #222;
   text-decoration: underline;
 }
 
-#tweet_link {
+.tweet_link {
   color: #222;
   font-style: italic;
 }
 
-#tweet_link:hover {
+.tweet_link:hover {
+  color: #222;
   text-decoration: underline;
 }
 
