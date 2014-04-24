@@ -1,6 +1,6 @@
 module RakeHelper
   def self.creator(fave)
-    Favorite.create(   
+    Favorite.create(
       tweet_id: fave.id,
       date_tweeted: fave.created_at,
       text: fave.text,

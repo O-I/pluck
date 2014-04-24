@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Favorite do
-  
+
   before { @fave = create(:favorite) }
 
   subject { @fave }
