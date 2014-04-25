@@ -6,7 +6,7 @@ endlessScroll = function() {
     $(window).scroll(function() {
       var url;
       url = $('.pagination .next_page').attr('href');
-      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 100) {
         $('.pagination').text('Plucking more favorites...');
         return $.getScript(url);
       }
