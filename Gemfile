@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.0'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -35,7 +35,7 @@ gem 'twitter'
 gem 'pg_search'
 
 # For pagination
-gem 'will_paginate'
+gem 'will_paginate', github: 'nazgum/will_paginate'
 
 # For prettying things up
 gem 'foundation-rails'
