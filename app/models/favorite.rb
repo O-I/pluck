@@ -7,11 +7,11 @@ class Favorite < ActiveRecord::Base
   self.per_page = 25
 
   include PgSearch
-  pg_search_scope :find,
+  pg_search_scope :seek,
     against: { text: 'A', tweeter_name: 'B', tweeter_screen_name: 'C' },
     using: { tsearch: { dictionary: 'english' } }
 
   def self.search(query)
-    query.present? ? find(query) : all
+    query.present? ? seek(query) : all
   end
 end
