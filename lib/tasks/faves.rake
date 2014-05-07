@@ -51,4 +51,39 @@ namespace :favorites_list do
     Favorite.destroy(ids_to_destroy)
     puts "Removed #{quantity_removed} duplicate#{s}"
   end
+
+  desc "Update profile pics"
+  task repluck_pics: :environment do
+    image_urls = Favorite.pluck(:tweeter_profile_image_url)
+    uniq_urls = image_urls.uniq
+    urls_to_update = []
+
+    puts 'Determining how many profile urls need updating'
+    puts 'This may take a while...'
+
+    uniq_urls.each do |url|
+      response_code = Net::HTTP.get_response(url).code rescue nil
+      urls_to_update << url unless response_code == '200'
+    end
+
+    urls_to_update_count = urls_to_update.size
+
+    puts "Unique urls needing updates: #{urls_to_update_count}"
+    puts 'Updating...'
+
+    urls_to_update.each.with_index do |url, index|
+      faves_to_update = Favorite.all.select do |fave|
+        fave.tweeter_profile_image_url == url
+      end
+
+      handle = faves_to_update.first.tweeter_screen_name
+      updated_profile_image_url = $client.user(handle).profile_image_url
+
+      faves_to_update.each do |fave|
+        fave.update(tweeter_profile_image_url: updated_profile_image_url)
+      end
+      
+      puts "Set #{index + 1} of #{urls_to_update_count} updated"
+    end
+  end
 end
