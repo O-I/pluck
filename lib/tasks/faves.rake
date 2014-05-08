@@ -1,8 +1,8 @@
 require_relative 'rake_helper'
 
-namespace :favorites_list do
+namespace :pluck do
   desc "Get all favorited tweets of the user"
-  task pluck_all: :environment do
+  task all: :environment do
     MAX = 200
     faves = []
     favorites_count = $client.user.favorites_count
@@ -27,7 +27,7 @@ namespace :favorites_list do
   end
 
   desc "Get the most recent favorited tweets not in DB"
-  task pluck_recent: :environment do
+  task recent: :environment do
     greatest = Favorite.all.map { |t| t.tweet_id.to_i }.max
     faves = $client.favorites(since_id: greatest)
     faves.each do |fave|
@@ -38,7 +38,7 @@ namespace :favorites_list do
   end
 
   desc "Remove duplicate favorites"
-  task remove_dupluckates: :environment do
+  task remove_dups: :environment do
     freq = Hash.new(0)
     faves = Favorite.pluck(:tweet_id)
     faves.each { |fave| freq[fave] += 1 }
@@ -53,7 +53,7 @@ namespace :favorites_list do
   end
 
   desc "Update profile pics"
-  task repluck_pics: :environment do
+  task update_pics: :environment do
     image_urls = Favorite.pluck(:tweeter_profile_image_url)
     uniq_urls = image_urls.uniq
     urls_to_update = []
