@@ -1,5 +1,5 @@
 <div class='small-7 large-centered columns favorite' id='favorite-<%= favorite.id %>'>
-  <%= image_tag favorite.tweeter_profile_image_url.to_s, class: 'fave-profile-pic' %>
+  <%= profile_pic favorite %>
   <div class='fave-content'>
     <div class='fave-header'>
       <%= link_to_tweeter favorite %>&nbsp;&nbsp;

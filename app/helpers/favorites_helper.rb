@@ -1,4 +1,8 @@
 module FavoritesHelper
+  def profile_pic(favorite)
+    image_tag favorite.tweeter_profile_image_url.to_s, class: 'fave-profile-pic'
+  end
+
   def link_to_tweeter(favorite)
     link_to favorite.tweeter_name, "https://twitter.com/#{favorite.tweeter_screen_name}", class: 'tweeter_link', target: '_blank'
   end
