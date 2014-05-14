@@ -9,7 +9,7 @@ class Favorite < ActiveRecord::Base
   include PgSearch
   pg_search_scope :seek,
     against: { text: 'A', tweeter_name: 'B', tweeter_screen_name: 'C' },
-    using: { tsearch: { dictionary: 'english' } },
+    using: { tsearch: { dictionary: 'english', prefix: true } },
     ignoring: :accents
 
   def self.search(query)
