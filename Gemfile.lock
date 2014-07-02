@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/nazgum/will_paginate.git
-  revision: 887d615971e76c01d19e2e274856129acf5b9ec3
+  remote: git://github.com/mislav/will_paginate.git
+  revision: 623e9c5390998a2aca283bca28009f7d479d5f0f
   specs:
     will_paginate (3.0.4)
 
