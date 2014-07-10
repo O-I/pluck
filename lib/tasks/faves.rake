@@ -27,9 +27,11 @@ namespace :pluck do
   end
 
   desc "Get the most recent favorited tweets not in DB"
-  task recent: :environment do
-    greatest = Favorite.all.map { |t| t.tweet_id.to_i }.max
-    faves = $client.favorites(since_id: greatest)
+  task :recent, [:count] => :environment do |t, args|
+    options = { count: args[:count] || 20 }
+    options[:since_id] = Favorite.all.map { |t| t.tweet_id.to_i }.max
+    options.delete_if { |_, v| v.nil? }
+    faves = $client.favorites(options)
     faves.each do |fave|
       RakeHelper::creator(fave)
     end
