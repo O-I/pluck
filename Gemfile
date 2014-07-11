@@ -35,7 +35,7 @@ gem 'twitter'
 gem 'pg_search'
 
 # For pagination
-gem 'will_paginate', '~> 3.0.7'#github: 'mislav/will_paginate'
+gem 'will_paginate', '~> 3.0.7'
 
 # For prettying things up
 gem 'foundation-rails'
