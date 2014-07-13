@@ -35,7 +35,9 @@ gem 'twitter'
 gem 'pg_search'
 
 # For pagination
-gem 'will_paginate', github: 'nazgum/will_paginate'
+gem 'will_paginate',
+github: 'O-I/will_paginate',
+branch: 'fix_select_for_count'
 
 # For prettying things up
 gem 'foundation-rails'

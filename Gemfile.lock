@@ -1,6 +1,7 @@
 GIT
-  remote: git://github.com/nazgum/will_paginate.git
-  revision: 887d615971e76c01d19e2e274856129acf5b9ec3
+  remote: git://github.com/O-I/will_paginate.git
+  revision: 30080969fb6deb7df1f9c508e3619e095a512080
+  branch: fix_select_for_count
   specs:
     will_paginate (3.0.4)
 
