@@ -36,8 +36,8 @@ gem 'pg_search'
 
 # For pagination
 gem 'will_paginate',
-github: 'O-I/will_paginate',
-branch: 'fix_select_for_count'
+github: 'edariedl/will_paginate',
+branch: 'rename_select_for_count_method'
 
 # For prettying things up
 gem 'foundation-rails'
