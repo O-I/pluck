@@ -1,7 +1,6 @@
 GIT
-  remote: git://github.com/O-I/will_paginate.git
-  revision: 450415170eee25f3d98eaf3ad5499136e9e9b21f
-  branch: rename_select_for_count
+  remote: git://github.com/nazgum/will_paginate.git
+  revision: 887d615971e76c01d19e2e274856129acf5b9ec3
   specs:
     will_paginate (3.0.4)
 
