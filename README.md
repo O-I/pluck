@@ -36,16 +36,20 @@ If Terminal responds to `brew`, `git`, `rvm`, and `psql`, continue on.
 
 Clone the app and `bundle`:
 
-`git clone git@github.com:O-I/pluck.git`
-`cd pluck`
-`bundle install`
+```
+$ git clone git@github.com:O-I/pluck.git
+$ cd pluck
+$ bundle install
+```
 
 You'll need Twitter keys. Get them [here](https://dev.twitter.com). Then create a `.env` file in the root that mimics the structure of `.env_example` using your development keys.
 
 Create and migrate the database:
 
-`rake db:create`
-`rake db:migrate`
+```
+$ rake db:create
+$ rake db:migrate
+```
 
 If you would like to get all of your favorites in one shot, run `rake pluck:all`. Note, to prevent hitting an API rate limit, I stagger each bulk call of 200 tweets by one minute. So, if you have 2000 favorites, it will take about 10 minutes to populate the database. Feel free to experiment with removing this time delay. It is likely overly cautious, but since you'll only ever realistically have to run this rake task once, I think the point is moot. I do not know whether there is a hard limit on how many favorites you can pluck. If it is anything like the restrictions on your timeline, then you can only access your last 3200 favorites through the API.
 
