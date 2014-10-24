@@ -1,49 +1,22 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.1.3'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
-
-# Use postgresql as the database for Active Record
-gem 'pg'
-
-# Use unicorn as the web server
-gem 'unicorn'
-
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-# For loading environment variables
-gem 'dotenv-rails'
-
-# For working with the Twitter API
-gem 'twitter'
-
-# For better working with PostgreSQL full text search
-gem 'pg_search'
-
-# For pagination
-gem 'will_paginate',
+gem 'rails',           '4.1.6'
+gem 'pg'                       # Use postgresql as the database
+gem 'unicorn'                  # Use unicorn as the web server
+gem 'sass-rails',   '~> 4.0.2' # Use SCSS for stylesheets
+gem 'uglifier',     '>= 1.3.0' # Use Uglifier as compressor for JS assets
+gem 'coffee-rails', '~> 4.0.0' # Use CoffeeScript for .js.coffee assets/views
+gem 'jquery-rails'             # Use jquery as the JavaScript library
+gem 'foundation-rails'         # Use Foundation as the CSS framework
+gem 'jbuilder',     '~> 1.2'   # For building JSON APIs easily
+gem 'dotenv-rails'             # For loading environment variables
+gem 'twitter'                  # For working with the Twitter API
+gem 'pg_search'                # For PostgreSQL full text search
+gem 'newrelic_rpm'             # For app monitoring
+gem 'will_paginate',           # For pagination
 github: 'edariedl/will_paginate',
 branch: 'rename_select_for_count_method'
-
-# For prettying things up
-gem 'foundation-rails'
-
-# For app monitoring
-gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'thin'
