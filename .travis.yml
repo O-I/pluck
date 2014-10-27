@@ -1,4 +1,14 @@
 language: ruby
 rvm:
-  - 2.1.3
+- 2.1.4
 script: bin/rake db:create db:migrate
+deploy:
+  provider: heroku
+  app: kerpluck
+  api_key:
+    secure: 0TZRz9yYREZyenJ1b+euMrQ0wZ80Jvb8crsEiXUccmdvKEwPhCKW7l3h9sbfszdmLd1v9V42U90H5B2AGxBtvOGpRip/Xd6b1m/t22Kg6w0XyGeoO7ZqfW+uifA+ClM3githclLAMzvtDwBurOHFd/5v5iQMwW/yy608WAFyFdE=
+  run:
+    - bin/rake db:migrate
+    - restart
+  on:
+    repo: O-I/pluck
