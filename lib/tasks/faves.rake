@@ -78,8 +78,13 @@ namespace :pluck do
         fave.tweeter_profile_image_url == url
       end
 
-      handle = faves_to_update.first.tweeter_screen_name
-      updated_profile_image_url = $client.user(handle).profile_image_url
+      begin
+        handle = faves_to_update.first.tweeter_screen_name
+        updated_profile_image_url = $client.user(handle).profile_image_url
+      rescue => e
+        puts "#{handle}'s profile pic could not be updated"
+        next
+      end
 
       faves_to_update.each do |fave|
         fave.update(tweeter_profile_image_url: updated_profile_image_url)
