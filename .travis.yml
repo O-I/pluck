@@ -10,6 +10,6 @@ deploy:
   run:
     - "bin/rake db:migrate"
     - restart
-  skip_cleanup: true
+    - "rake cleanup"
   on:
     repo: O-I/pluck
