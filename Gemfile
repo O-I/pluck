@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.4'
 
-gem 'rails',           '4.1.6'
+gem 'rails',           '4.1.7'
 gem 'pg'                       # Use postgresql as the database
 gem 'unicorn'                  # Use unicorn as the web server
 gem 'sass-rails',   '~> 4.0.2' # Use SCSS for stylesheets
