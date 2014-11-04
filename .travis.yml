@@ -4,6 +4,7 @@ rvm:
 script: bin/rake db:create db:migrate
 deploy:
   provider: heroku
+  strategy: git
   app: kerpluck
   api_key:
     secure: 0TZRz9yYREZyenJ1b+euMrQ0wZ80Jvb8crsEiXUccmdvKEwPhCKW7l3h9sbfszdmLd1v9V42U90H5B2AGxBtvOGpRip/Xd6b1m/t22Kg6w0XyGeoO7ZqfW+uifA+ClM3githclLAMzvtDwBurOHFd/5v5iQMwW/yy608WAFyFdE=
