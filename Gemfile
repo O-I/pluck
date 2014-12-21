@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
 
-gem 'rails',           '4.1.8'
+gem 'rails',           '4.2.0'
 gem 'pg'                       # Use postgresql as the database
 gem 'unicorn'                  # Use unicorn as the web server
-gem 'sass-rails',   '~> 4.0.2' # Use SCSS for stylesheets
+gem 'sass',         '~> 3.3.0' # Use at least 3.3 for Foundation to work
+gem 'sass-rails'               # Use SCSS for stylesheets
 gem 'uglifier',     '>= 1.3.0' # Use Uglifier as compressor for JS assets
 gem 'coffee-rails', '~> 4.0.0' # Use CoffeeScript for .js.coffee assets/views
 gem 'jquery-rails'             # Use jquery as the JavaScript library
