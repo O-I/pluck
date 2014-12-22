@@ -1,4 +1,5 @@
 # ☆pluck
+[![Build Status](https://travis-ci.org/O-I/pluck.svg?branch=master)](https://travis-ci.org/O-I/pluck)
 
 ☆pluck is a Rails app for sifting through my favorites list on Twitter.
 
