@@ -14,7 +14,7 @@ module FavoritesHelper
   end
 
   def text_to_true_link(tweet_text)
-    urls = tweet_text.scan(/https*:\/\/t.co\/\w+/)
+    urls = URI.extract(tweet_text, %w(http https))
     urls.each do |url|
       tweet_text.gsub!(url, "<a href=#{url} target='_blank'>#{url}</a>")
     end
