@@ -3,7 +3,7 @@ ruby '2.2.0'
 
 gem 'rails',           '4.2.0'
 gem 'pg'                       # Use postgresql as the database
-gem 'unicorn'                  # Use unicorn as the web server
+gem 'puma'                     # Use puma as the web server
 gem 'sass',         '~> 3.3.0' # Use at least 3.3 for Foundation to work
 gem 'sass-rails'               # Use SCSS for stylesheets
 gem 'uglifier',     '>= 1.3.0' # Use Uglifier as compressor for JS assets
