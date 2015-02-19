@@ -1,17 +1,16 @@
-development:
+defaults: &defaults
   adapter: postgresql
   encoding: unicode
-  database: pluck_development
   pool: 5
+
+development:
+  <<: *defaults
+  database: pluck_development
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *defaults
   database: pluck_test
-  pool: 5
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  <<: *defaults
   database: pluck_production
-  pool: 5
