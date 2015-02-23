@@ -41,9 +41,8 @@ namespace :pluck do
 
   desc "Remove duplicate favorites"
   task remove_dups: :environment do
-    freq = Hash.new(0)
     faves = Favorite.pluck(:tweet_id)
-    faves.each { |fave| freq[fave] += 1 }
+    freq = faves.each_with_object(Hash.new(0)) { |id, hash| hash[id] += 1 }
     duplicate_tweet_ids = freq.select { |_, val| val > 1 }.keys
     duplicates = Favorite.where(tweet_id: duplicate_tweet_ids)
     ids_to_destroy = duplicates.map(&:id).select(&:even?)
