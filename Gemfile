@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.1'
 
-gem 'rails',           '4.2.0'
+gem 'rails',           '4.2.1'
 gem 'pg'                       # Use postgresql as the database
 gem 'puma'                     # Use puma as the web server
 gem 'sass',         '~> 3.3.0' # Use at least 3.3 for Foundation to work
