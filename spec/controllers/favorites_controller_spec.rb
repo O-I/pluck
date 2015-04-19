@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe FavoritesController, type: :controller do
 
   describe 'GET #index' do
