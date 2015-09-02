@@ -19,6 +19,7 @@ gem 'will_paginate',           # For pagination
 github: 'edariedl/will_paginate',
 branch: 'rename_select_for_count_method'
 gem 'rack-mini-profiler', require: false
+gem 'flamegraph'
 
 group :development, :test do
   gem 'thin'
