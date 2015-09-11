@@ -10,7 +10,6 @@ gem 'uglifier',     '>= 1.3.0' # Use Uglifier as compressor for JS assets
 gem 'coffee-rails', '~> 4.0.0' # Use CoffeeScript for .js.coffee assets/views
 gem 'jquery-rails'             # Use jquery as the JavaScript library
 gem 'foundation-rails'         # Use Foundation as the CSS framework
-gem 'jbuilder',     '~> 1.2'   # For building JSON APIs easily
 gem 'dotenv-rails'             # For loading environment variables
 gem 'twitter'                  # For working with the Twitter API
 gem 'pg_search'                # For PostgreSQL full text search
