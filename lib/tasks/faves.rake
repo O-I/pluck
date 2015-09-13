@@ -55,16 +55,14 @@ namespace :pluck do
 
   desc "Update profile pics"
   task update_pics: :environment do
-    image_urls = Favorite.pluck(:tweeter_profile_image_url)
-    uniq_urls = image_urls.uniq
-    urls_to_update = []
+    image_urls = Favorite.pluck('DISTINCT tweeter_profile_image_url')
 
     puts 'Determining how many profile urls need updating'
     puts 'This may take a while...'
 
-    uniq_urls.each do |url|
+    urls_to_update = image_urls.each_with_object([]) do |url, urls|
       response_code = Net::HTTP.get_response(url).code rescue nil
-      urls_to_update << url unless response_code == '200'
+      urls << url unless response_code == '200'
     end
 
     urls_to_update_count = urls_to_update.size
@@ -73,9 +71,7 @@ namespace :pluck do
     puts 'Updating...'
 
     urls_to_update.each.with_index do |url, index|
-      faves_to_update = Favorite.all.select do |fave|
-        fave.tweeter_profile_image_url == url
-      end
+      faves_to_update = Favorite.where('tweeter_profile_image_url = ?', url)
 
       begin
         handle = faves_to_update.first.tweeter_screen_name
