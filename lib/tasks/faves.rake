@@ -32,9 +32,7 @@ namespace :pluck do
     options[:since_id] = Favorite.all.map { |t| t.tweet_id.to_i }.max
     options.delete_if { |_, v| v.nil? }
     faves = $client.favorites(options)
-    faves.each do |fave|
-      RakeHelper::creator(fave)
-    end
+    faves.each { |fave| RakeHelper::creator(fave) }
     s = faves.size == 1 ? '' : 's'
     puts "#{faves.size} new favorite#{s} added"
   end
