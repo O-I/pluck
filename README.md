@@ -17,7 +17,7 @@ This assumes development on Mac OS X. Things you should have installed are liste
 
 - Homebrew
 
-`$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`
+`$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 - Git
 
